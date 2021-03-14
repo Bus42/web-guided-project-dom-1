@@ -1,9 +1,9 @@
 // Inserts default colored "header" line above console output with optional third argument for color of header
 function taskLog(taskID, logInput, color = "cyan") {
-    logInput
-      ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
-      : console.log(`%cTask ${taskID}`, `color: ${color}`);
-  }
+  logInput
+    ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
+    : console.log(`%cTask ${taskID}`, `color: ${color}`);
+}
 
 console.groupCollapsed(`%cTask 1`, "color: blue");
 // 👉 1- Finding an element on the page and saving a reference to it
@@ -20,13 +20,13 @@ const firstCard = document.querySelector(".card:nth-of-type(1)");
 console.log(firstCard);
 // B- finding within one particular element
 const imageFirstCard = firstCard.querySelector("img");
-taskLog("1B", imageFirstCard)
+taskLog("1B", imageFirstCard);
 const titleFirstCard = firstCard.querySelector(".card-title");
-console.log(titleFirstCard)
+console.log(titleFirstCard);
 const subtitleFirstCard = firstCard.querySelector("h3");
 console.log(subtitleFirstCard);
 const textFirstCard = firstCard.innerText;
-console.log(textFirstCard)
+console.log(textFirstCard);
 // C- traversing with dot notation
 const link1FirstCard = firstCard.querySelector(".card-body > a");
 taskLog("1C", link1FirstCard);
@@ -37,31 +37,40 @@ console.groupEnd("Task 1");
 console.groupCollapsed(`%cTask 2`, "color: orange");
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
-const allLinks = document.querySelector("nav").querySelectorAll("a");
-taskLog("2A", allLinks);
+const allNavLinks = document.querySelector("nav").querySelectorAll("a");
+taskLog("2A", allNavLinks);
 // B- Loop over the links and console.log their text content
 taskLog("2B", null);
-allLinks.forEach((link) => console.log(link.textContent));
+allNavLinks.forEach((link) => console.log(link.textContent));
 // C- Turn the collection of links into a real array
-allLinksArray = Array.from(allLinks);
-taskLog("2C", allLinksArray);
+allNavLinksArray = Array.from(allNavLinks);
+taskLog("2C", allNavLinksArray);
 // D- Use .filter to find the anchor tag with the textContent of "Home"
-const homeLink = allLinksArray.filter(
+const homeLink = allNavLinksArray.filter(
   (link) => link.textContent.toLowerCase() === "home"
 );
 taskLog("2D", homeLink);
 console.groupEnd("Task 2");
 
-console.group(`%cTask 3`, "color: green");
+console.groupCollapsed(`%cTask 3`, "color: green");
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
-    taskLog("3A", null);
-//  B- Have the students research online the difference between textContent and innerText
+const headerText = document.querySelector("h1");
+headerText.textContent = headerText.textContent.replace("Cat", "Dog");
+taskLog("3A", headerText.textContent);
+//  B- Have the students research online the difference between textContent and innerText;
+console.log(
+  `- If you want both visible and hidden content, use %ctextContent`,
+  "color: limegreen",
+  `\n`,
+  `Otherwise, use innerText, which will only show human-readable elements`
+);
 console.groupEnd("Task 3");
 
-console.groupCollapsed(`%cTask 4`, "color: pink");
+console.group(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
+taskLog("4A", null)
 //  B- Using .setAttribute to change a few attributes
 console.groupEnd("Task 4");
 
