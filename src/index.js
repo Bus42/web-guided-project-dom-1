@@ -99,8 +99,8 @@ const body = document.querySelector("div.card-group");
 body.classList.add("with_balls");
 taskLog("5A", body.classList);
 //  B- By manipulating inline styles on the element
-
-taskLog("5b", null);
+firstCard.style.borderRadius = "10px";
+taskLog("5b", firstCard.style);
 console.groupEnd("Task 5");
 
 console.groupCollapsed(`%cTask 6`, "color: red");
