@@ -75,20 +75,21 @@ console.groupEnd("Task 3");
 console.group(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
+const cardImage = document.querySelector(".card").querySelector("img");
 // create object to hold new values
 const dogImg = {
   src: "https://i.imgur.com/jDimNTZ.jpeg",
   title: "Iz dogg. Goes woof",
-  alt: "Furry canine bestest friend"
-}
-const cardImage = document.querySelector(".card").querySelector("img");
-cardImage.src = dogImg.src;
-cardImage.title = dogImg.title;
-cardImage.alt = dogImg.alt;
+  alt: "Furry canine bestest friend",
+};
+// create iterable array from object keys and map over it to reassign key values
+Object.keys(dogImg).map((key) => {
+  cardImage[key] = dogImg[key];
+});
 taskLog("4A", cardImage);
 //  B- Using .setAttribute to change a few attributes
-
-taskLog("4B", null);
+header.setAttribute("class", "dog_header");
+taskLog("4B", header);
 console.groupEnd("Task 4");
 
 console.groupCollapsed(`%cTask 5`, "color: magenta");
