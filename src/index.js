@@ -52,22 +52,27 @@ const homeLink = allNavLinksArray.filter(
 taskLog("2D", homeLink);
 console.groupEnd("Task 2");
 
-console.groupCollapsed(`%cTask 3`, "color: green");
+console.group(`%cTask 3`, "color: green");
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
 const headerText = document.querySelector("h1");
 headerText.textContent = headerText.textContent.replace("Cat", "Dog");
 taskLog("3A", headerText.textContent);
+const allLinks = document.querySelectorAll('a');
+allLinks.forEach(link => {
+  link.innerText = link.innerText.replace("Cat", "Dog");
+  console.log(link.innerText)
+})
 //  B- Have the students research online the difference between textContent and innerText;
 console.log(
   `- If you want both visible and hidden content, use %ctextContent`,
   "color: limegreen",
   `\n`,
-  `Otherwise, use innerText, which will only show human-readable elements`
+  `Otherwise, use innerText to show only human-readable elements`
 );
 console.groupEnd("Task 3");
 
-console.group(`%cTask 4`, "color: pink");
+console.groupCollapsed(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
 taskLog("4A", null)
@@ -90,6 +95,7 @@ console.groupCollapsed(`%cTask 7`, "color: yellow");
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
 const secondCard = firstCard.cloneNode(true);
+console.log(secondCard);
 console.groupEnd("Task 7");
 
 console.groupCollapsed(`%cTask 8`, "color: #af278c");
