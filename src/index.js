@@ -1,9 +1,14 @@
+console.groupCollapsed("Task 1");
 // 👉 1- Finding an element on the page and saving a reference to it
 //  Older: getElementById, getElementsByTagName, getElementsByClassName
 //  Newer: querySelector, querySelectorAll
 //  Select the following single elements from the div.card
 
-const consoleColor = "#007AAF"
+function taskLog(taskID, logInput, color = "#007AAF") {// Inserts default colored header line above console output with optional third argument for color of header
+  logInput
+    ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
+    : console.log(`%cTask ${taskID}`, `color: ${color}`);
+}
 
 // A- finding across the entire DOM
 const header = document.getElementsByTagName("header")[0];
@@ -25,20 +30,24 @@ const link1FirstCard = firstCard.querySelector(".card-body > a");
 // console.log(link1FirstCard)
 const link2FirstCard = firstCard.querySelectorAll(".card-body > a")[1];
 // console.log(link2FirstCard);
+console.groupEnd("Task 1");
+
 console.groupCollapsed("Task 2");
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
 const allLinks = document.querySelector("nav").querySelectorAll("a");
-console.log(`%cTask 2A`, `color: ${consoleColor}`, '\n', allLinks);
+taskLog("2A", allLinks);
 // B- Loop over the links and console.log their text content
-console.log(`%cTask 2B`, `color: ${consoleColor}`);
+taskLog("2B", null);
 allLinks.forEach((link) => console.log(link.textContent));
 // C- Turn the collection of links into a real array
 allLinksArray = Array.from(allLinks);
-console.log(`%cTask 2C`, `color: ${consoleColor}`, '\n', allLinksArray);
+taskLog("2C", allLinksArray);
 // D- Use .filter to find the anchor tag with the textContent of "Home"
-const homeLink = allLinksArray.filter(link => link.textContent.toLowerCase() === 'home')
-console.log(`%cTask 2D`, `color: ${consoleColor}`, '\n', homeLink);
+const homeLink = allLinksArray.filter(
+  (link) => link.textContent.toLowerCase() === "home"
+);
+taskLog("2D", homeLink);
 console.groupEnd("Task 2");
 
 console.group("Task 3");
