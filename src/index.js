@@ -4,18 +4,25 @@
 //  Select the following single elements from the div.card
 
 // A- finding across the entire DOM
-const header = null
-const logoTitle = null
-const firstCard = null
+const header = document.getElementsByTagName('header')[0];
+// console.log(header)
+const logoTitle = document.getElementsByTagName('h1');
+const firstCard = document.querySelector('.card:nth-of-type(1)');
+// console.log(firstCard)
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
-const textFirstCard = null
+const imageFirstCard = firstCard.querySelector('img');
+// console.log(imageFirstCard);
+const titleFirstCard = firstCard.querySelector('.card-title')
+// console.log(titleFirstCard)
+const subtitleFirstCard = firstCard.querySelector('h3');
+// console.log(subtitleFirstCard);
+const textFirstCard = firstCard.innerText;
+// console.log(textFirstCard)
 // C- traversing with dot notation
-const link1FirstCard = null
-const link2FirstCard = null
-
+const link1FirstCard = firstCard.querySelector('.card-body > a')
+// console.log(link1FirstCard)
+const link2FirstCard = firstCard.querySelectorAll('.card-body > a')[1];
+console.log(link2FirstCard);
 
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
@@ -46,6 +53,8 @@ const link2FirstCard = null
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
+const secondCard = firstCard.cloneNode(true);
+
 
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
