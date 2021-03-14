@@ -52,17 +52,17 @@ const homeLink = allNavLinksArray.filter(
 taskLog("2D", homeLink);
 console.groupEnd("Task 2");
 
-console.group(`%cTask 3`, "color: green");
+console.groupCollapsed(`%cTask 3`, "color: green");
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
 const headerText = document.querySelector("h1");
 headerText.textContent = headerText.textContent.replace("Cat", "Dog");
 taskLog("3A", headerText.textContent);
-const allLinks = document.querySelectorAll('a');
-allLinks.forEach(link => {
+const allLinks = document.querySelectorAll("a");
+allLinks.forEach((link) => {
   link.innerText = link.innerText.replace("Cat", "Dog");
-  console.log(link.innerText)
-})
+  console.log(link.innerText);
+});
 //  B- Have the students research online the difference between textContent and innerText;
 console.log(
   `- If you want both visible and hidden content, use %ctextContent`,
@@ -72,17 +72,33 @@ console.log(
 );
 console.groupEnd("Task 3");
 
-console.groupCollapsed(`%cTask 4`, "color: pink");
+console.group(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
-taskLog("4A", null)
+// create object to hold new values
+const dogImg = {
+  src: "https://i.imgur.com/jDimNTZ.jpeg",
+  title: "Iz dogg. Goes woof",
+  alt: "Furry canine bestest friend"
+}
+const cardImage = document.querySelector(".card").querySelector("img");
+cardImage.src = dogImg.src;
+cardImage.title = dogImg.title;
+cardImage.alt = dogImg.alt;
+taskLog("4A", cardImage);
 //  B- Using .setAttribute to change a few attributes
+
+taskLog("4B", null);
 console.groupEnd("Task 4");
 
 console.groupCollapsed(`%cTask 5`, "color: magenta");
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+
+taskLog("5A", null);
 //  B- By manipulating inline styles on the element
+
+taskLog("5b", null);
 console.groupEnd("Task 5");
 
 console.groupCollapsed(`%cTask 6`, "color: red");
