@@ -1,11 +1,11 @@
 // Inserts default colored "header" line above console output with optional third argument for color of header
-function taskLog(taskID, logInput, color = "#007AAF") {
+function taskLog(taskID, logInput, color = "cyan") {
     logInput
       ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
       : console.log(`%cTask ${taskID}`, `color: ${color}`);
   }
 
-console.groupCollapsed("Task 1");
+console.groupCollapsed(`%cTask 1`, "color: blue");
 // 👉 1- Finding an element on the page and saving a reference to it
 //  Older: getElementById, getElementsByTagName, getElementsByClassName
 //  Newer: querySelector, querySelectorAll
@@ -34,7 +34,7 @@ const link2FirstCard = firstCard.querySelectorAll(".card-body > a")[1];
 console.log(link2FirstCard);
 console.groupEnd("Task 1");
 
-console.groupCollapsed("Task 2");
+console.groupCollapsed(`%cTask 2`, "color: orange");
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
 const allLinks = document.querySelector("nav").querySelectorAll("a");
@@ -52,40 +52,41 @@ const homeLink = allLinksArray.filter(
 taskLog("2D", homeLink);
 console.groupEnd("Task 2");
 
-console.group("Task 3");
+console.group(`%cTask 3`, "color: green");
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
+    taskLog("3A", null);
 //  B- Have the students research online the difference between textContent and innerText
 console.groupEnd("Task 3");
 
-console.groupCollapsed("Task 4");
+console.groupCollapsed(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
 //  B- Using .setAttribute to change a few attributes
 console.groupEnd("Task 4");
 
-console.groupCollapsed("Task 5");
+console.groupCollapsed(`%cTask 5`, "color: magenta");
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
 //  B- By manipulating inline styles on the element
 console.groupEnd("Task 5");
 
-console.groupCollapsed("Task 6");
+console.groupCollapsed(`%cTask 6`, "color: red");
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
 console.groupEnd("Task 6");
 
-console.groupCollapsed("Task 7");
+console.groupCollapsed(`%cTask 7`, "color: yellow");
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
 const secondCard = firstCard.cloneNode(true);
 console.groupEnd("Task 7");
 
-console.groupCollapsed("Task 8");
+console.groupCollapsed(`%cTask 8`, "color: #af278c");
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
 console.groupEnd("Task 8");
 
-console.groupCollapsed("Task 9");
+console.groupCollapsed(`%cTask 9`, "color: #52a257");
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
 console.groupEnd("Task 9");
