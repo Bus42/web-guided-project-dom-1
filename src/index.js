@@ -92,7 +92,7 @@ header.setAttribute("class", "dog_header");
 taskLog("4B", header);
 console.groupEnd("Task 4");
 
-console.group(`%cTask 5`, "color: magenta");
+console.groupCollapsed(`%cTask 5`, "color: magenta");
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
 const body = document.querySelector("div.card-group");
@@ -103,9 +103,15 @@ firstCard.style.borderRadius = "10px";
 taskLog("5b", firstCard.style);
 console.groupEnd("Task 5");
 
-console.groupCollapsed(`%cTask 6`, "color: red");
+console.group(`%cTask 6`, "color: red");
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
+const nav = document.querySelector('nav');
+const newLink = document.createElement('a');
+newLink.href = "#";
+newLink.classList = "menu-item";
+newLink.innerText = "Blog";
+nav.appendChild(newLink);
 console.groupEnd("Task 6");
 
 console.groupCollapsed(`%cTask 7`, "color: yellow");
