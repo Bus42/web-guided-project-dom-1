@@ -103,7 +103,7 @@ firstCard.style.borderRadius = "10px";
 taskLog("5b", firstCard.style);
 console.groupEnd("Task 5");
 
-console.group(`%cTask 6`, "color: red");
+console.groupCollapsed(`%cTask 6`, "color: red");
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
 const nav = document.querySelector('nav');
@@ -122,10 +122,10 @@ const secondCard = firstCard.cloneNode(true);
 console.log(secondCard);
 console.groupEnd("Task 7");
 
-console.groupCollapsed(`%cTask 8`, "color: #af278c");
+console.group(`%cTask 8`, "color: #af278c");
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
 console.groupEnd("Task 8");
 
-console.groupCollapsed(`%cTask 9`, "color: #52a257");
+console.group(`%cTask 9`, "color: #52a257");
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
 console.groupEnd("Task 9");
