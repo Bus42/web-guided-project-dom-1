@@ -114,3 +114,7 @@ footer {
 .dog_header {
   flex-direction: row-reverse;
 }
+.with_balls {
+  background-image: url("https://cdn.shopify.com/s/files/1/1749/5899/articles/tennis-balls-resized_2048x.jpg");
+  background-size: cover;
+}

@@ -72,7 +72,7 @@ console.log(
 );
 console.groupEnd("Task 3");
 
-console.group(`%cTask 4`, "color: pink");
+console.groupCollapsed(`%cTask 4`, "color: pink");
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
 const cardImage = document.querySelector(".card").querySelector("img");
@@ -92,11 +92,12 @@ header.setAttribute("class", "dog_header");
 taskLog("4B", header);
 console.groupEnd("Task 4");
 
-console.groupCollapsed(`%cTask 5`, "color: magenta");
+console.group(`%cTask 5`, "color: magenta");
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
-
-taskLog("5A", null);
+const body = document.querySelector("div.card-group");
+body.classList.add("with_balls");
+taskLog("5A", body.classList);
 //  B- By manipulating inline styles on the element
 
 taskLog("5b", null);
