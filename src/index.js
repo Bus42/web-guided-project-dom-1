@@ -1,35 +1,37 @@
+// Inserts default colored "header" line above console output with optional third argument for color of header
+function taskLog(taskID, logInput, color = "#007AAF") {
+    logInput
+      ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
+      : console.log(`%cTask ${taskID}`, `color: ${color}`);
+  }
+
 console.groupCollapsed("Task 1");
 // 👉 1- Finding an element on the page and saving a reference to it
 //  Older: getElementById, getElementsByTagName, getElementsByClassName
 //  Newer: querySelector, querySelectorAll
 //  Select the following single elements from the div.card
 
-function taskLog(taskID, logInput, color = "#007AAF") {// Inserts default colored header line above console output with optional third argument for color of header
-  logInput
-    ? console.log(`%cTask ${taskID}`, `color: ${color}`, "\n", logInput)
-    : console.log(`%cTask ${taskID}`, `color: ${color}`);
-}
-
 // A- finding across the entire DOM
 const header = document.getElementsByTagName("header")[0];
-// console.log(header)
+taskLog("1A", header);
 const logoTitle = document.getElementsByTagName("h1");
+console.log(logoTitle);
 const firstCard = document.querySelector(".card:nth-of-type(1)");
-// console.log(firstCard)
+console.log(firstCard);
 // B- finding within one particular element
 const imageFirstCard = firstCard.querySelector("img");
-// console.log(imageFirstCard);
+taskLog("1B", imageFirstCard)
 const titleFirstCard = firstCard.querySelector(".card-title");
-// console.log(titleFirstCard)
+console.log(titleFirstCard)
 const subtitleFirstCard = firstCard.querySelector("h3");
-// console.log(subtitleFirstCard);
+console.log(subtitleFirstCard);
 const textFirstCard = firstCard.innerText;
-// console.log(textFirstCard)
+console.log(textFirstCard)
 // C- traversing with dot notation
 const link1FirstCard = firstCard.querySelector(".card-body > a");
-// console.log(link1FirstCard)
+taskLog("1C", link1FirstCard);
 const link2FirstCard = firstCard.querySelectorAll(".card-body > a")[1];
-// console.log(link2FirstCard);
+console.log(link2FirstCard);
 console.groupEnd("Task 1");
 
 console.groupCollapsed("Task 2");
